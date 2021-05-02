@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://main/Main.gd" type="Script" id=2]
+[ext_resource path="res://main/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/font-press_start_2p/PressStart2P_DynamicFont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="background" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 3 )
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Player" type="Node2D" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 71, 92 )
+frames = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.72086
+margin_top = 9.91006
+margin_right = 48.7209
+margin_bottom = 23.9101
+custom_fonts/font = ExtResource( 4 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
